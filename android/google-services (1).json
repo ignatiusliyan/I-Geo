@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "17609448983",
+    "project_id": "i-geo-e7bdf",
+    "storage_bucket": "i-geo-e7bdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17609448983:android:e67eb15e096448a49dc652",
+        "android_client_info": {
+          "package_name": "com.example.geolocation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ0tHre6NNy_4uRs80_502aJuDJS8ejRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
