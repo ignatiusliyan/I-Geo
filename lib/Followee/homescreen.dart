@@ -66,18 +66,11 @@ class _FolloweeDashState extends State<FolloweeDash> {
                 subtitle: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (BuildContext context)=>Mapgoogle()));
-                      },
-                      child: Icon(
+                    Icon(
                         Icons.adjust_sharp,
                         color: Colors.green,
                         size:17,
                       ),
-                    ),
                     Text('Sharing'
                       ,style:TextStyle(
                         color: Colors.green
@@ -85,39 +78,43 @@ class _FolloweeDashState extends State<FolloweeDash> {
                   ],
                 ),
                 trailing: IconButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (BuildContext context)=>Mapgoogle()));
+                  },
                   icon: Icon(Icons.visibility_sharp,color: Colors.amber,),
                 ),
               ),
             ),
-            SizedBox(height: 20,),
-      StreamBuilder<bool>(
-        stream: _mapVisibilityStream,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator(); // Show a loading spinner while waiting
-          } else if (snapshot.hasData && snapshot.data == true) {
-            return Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black)
-            ),
-              width: MediaQuery.of(context).size.width,
-              height: 500,
-              child: GoogleMap(
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
-                initialCameraPosition: CameraPosition(
-                  target: LatLng(37.42796133580664, -122.085749655962),
-                  zoom: 14.4746,
-                ),
-              ),
-            );
-          } else {
-            return Text('Error: Could not load map');
-          }
-        },
-      )
+      //       SizedBox(height: 20,),
+      // StreamBuilder<bool>(
+      //   stream: _mapVisibilityStream,
+      //   builder: (context, snapshot) {
+      //     if (snapshot.connectionState == ConnectionState.waiting) {
+      //       return CircularProgressIndicator(); // Show a loading spinner while waiting
+      //     } else if (snapshot.hasData && snapshot.data == true) {
+      //       return Container(
+      //       decoration: BoxDecoration(
+      //         border: Border.all(color: Colors.black)
+      //       ),
+      //         width: MediaQuery.of(context).size.width,
+      //         height: 500,
+      //         child: GoogleMap(
+      //           onMapCreated: (GoogleMapController controller) {
+      //             _controller.complete(controller);
+      //           },
+      //           initialCameraPosition: CameraPosition(
+      //             target: LatLng(37.42796133580664, -122.085749655962),
+      //             zoom: 14.4746,
+      //           ),
+      //         ),
+      //       );
+      //     } else {
+      //       return Text('Error: Could not load map');
+      //     }
+      //   },
+      // )
           ],
         ),
       ),
