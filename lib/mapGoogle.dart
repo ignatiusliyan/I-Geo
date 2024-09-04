@@ -26,6 +26,9 @@ class _MapgoogleState extends State<Mapgoogle> {
       _mapController.move(LatLng(lantitude,longtitude), 13);
     });
     print('');
+    print('');
+
+
   }
 
   @override
@@ -62,6 +65,7 @@ class _MapgoogleState extends State<Mapgoogle> {
                   ],
                 ),
               ],
+//liyan
             ),
     );
   }
